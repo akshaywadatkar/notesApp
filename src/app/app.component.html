@@ -1,0 +1,29 @@
+<form [formGroup]="notesForms">
+
+    <!-- <div [formArrayName]="notes"> -->
+
+
+        <button (click)=" openDialog()">add task</button>
+
+    <div class="row m-5" *ngFor="let item of getNotesFormArray();let i = index">
+        <!-- <div formGroupName="{{i}}"> -->
+
+        <span class="col-md-1">{{item.id}}</span>
+        <span class="col-md-1">{{item.title}}</span>
+        <span class="col-md-1">{{item.details}}</span>
+        <span class="col-md-1">{{item.lastUpdateAt | date}}</span>
+        <span class="col-md-1"> <input type="checkbox" formControlName="isCompleted" /> </span>
+
+        <button class="col-md-1" (click)="editTask(item)">Edit Task</button>
+
+
+
+
+        <!-- </div> -->
+
+    </div>
+    <!-- </div> -->
+
+
+
+</form>
